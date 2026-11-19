@@ -9,6 +9,8 @@ html {
 }
 
 .page {
+  display: grid;
+  place-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -48,4 +50,257 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  inline-size: 1140px;
+}
+
+.result {
+  flex: 0 0 711px;
+}
+
+.result__video-container {
+  position: relative;
+  block-size: 386px;
+  margin-block-end: 16px;
+}
+
+.result__video {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  min-inline-size: 0;
+  border: 0;
+}
+
+.search-form__fieldset-title {
+  margin-block-end: 5px;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  inline-size: fit-content;
+}
+
+.search-form__textfield {
+  inline-size: 225px;
+  border: 0;
+  border-block: 1px solid currentColor;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label:has(.search-form__checkbox) {
+  cursor: pointer;
+}
+
+.search-form__label:has(.search-form__checkbox):hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__pseudo-checkbox {
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid currentColor;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: currentColor;
+  opacity: 0;
+  content: '';
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.button {
+  min-block-size: 34px;
+  border: 1px solid currentColor;
+  padding: 0 10px;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus,
+.content__card-link:focus {
+  outline: none;
+}
+
+.button:focus-visible,
+.content__card-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.button:focus-visible {
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  align-self: end;
+  inline-size: 194px;
+}
+
+.content__details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 26px;
+  min-inline-size: 0;
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  block-size: 298px;
+  overflow: auto;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+  padding: 2px;
+}
+
+.content__card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link_current,
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  min-inline-size: 0;
+}
+
+.content__video-card-title {
+  overflow: hidden;
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 0.9;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.content__video-card-thumbnail {
+  display: block;
+  flex-shrink: 0;
+  inline-size: 194px;
+  min-inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.more-button {
+  flex-shrink: 0;
+  inline-size: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
